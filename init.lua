@@ -17,6 +17,7 @@ hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 --
 
 cah = {"cmd", "alt", "ctrl"}
+csh = {"cmd", "ctrl", "shift"}
 
 --
 -- Imports
@@ -24,5 +25,6 @@ cah = {"cmd", "alt", "ctrl"}
 
 require("windowmanagement")
 require("terminalswitch")
+require("screenmanagement")
 
 hs.alert.show("Hammerspoon loaded")
