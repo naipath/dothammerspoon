@@ -3,6 +3,7 @@ local terminalApp = "com.googlecode.iterm2"
 local previousOpenedApp = ""
 
 -- Toggle between the terminal and the previously focussed app
+
 hs.hotkey.bind(
     {"alt"},
     "space",

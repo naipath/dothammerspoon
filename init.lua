@@ -10,7 +10,7 @@ function reloadConfig(files)
         hs.reload()
     end
 end
--- hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
 --
 -- Key defs
