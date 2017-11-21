@@ -1,3 +1,7 @@
+--
+-- Miscellaneous, use noises
+--
+
 local noises = hs.noises.new(
 function(noiseType)
 	if noiseType == 3 then

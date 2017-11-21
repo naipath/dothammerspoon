@@ -1,3 +1,7 @@
+--
+-- Switch between terminal and a different application
+--
+
 -- local terminalApp = "com.apple.Terminal"
 local terminalApp = "com.googlecode.iterm2"
 local previousOpenedApp = ""
