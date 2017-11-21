@@ -26,5 +26,7 @@ csh = {"cmd", "ctrl", "shift"}
 require("windowmanagement")
 require("terminalswitch")
 require("screenmanagement")
+require("ping")
+require("noises")
 
 hs.alert.show("Hammerspoon loaded")

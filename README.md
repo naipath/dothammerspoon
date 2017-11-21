@@ -19,3 +19,12 @@ The following shortcuts are supported:
 
 ## Terminal management
 - `⌥ + space` - switch between terminal and focussed app
+
+## Ping
+- `ctrl + ⌥ + ⌘  + P` - ping 8.8.8.8 twice
+
+## Noises
+- `ctrl + ⌥ + ⌘  + Y` - start listening to noises
+- `ctrl + ⌥ + ⌘  + U` - stop listening to noises
+
+When making a popping noise the front most application will hide.
