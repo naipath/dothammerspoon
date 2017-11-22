@@ -1,0 +1,14 @@
+[
+	{
+		
+		"removeableComment": "To create your own menu config rename this file to `menuConfig.json`, and alter it as you see fit.",
+
+		"title": "Menu item 1",
+		"command": "ls -alf"
+	},
+	{
+		"title": "Menu item 2",
+		"command": "ls -alf",
+		"checked": true,
+	}
+]

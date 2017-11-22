@@ -22,11 +22,12 @@ csh = {"cmd", "ctrl", "shift"}
 --
 -- Imports
 --
-
+require("fileutils")
 require("windowmanagement")
 require("terminalswitch")
 require("screenmanagement")
 require("ping")
 require("noises")
+require("menubar")
 
 hs.alert.show("Hammerspoon loaded")
