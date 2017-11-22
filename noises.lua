@@ -9,11 +9,12 @@ function(noiseType)
 	end
 end)
 
-hs.hotkey.bind(cah, "y",  function()
-	noises:start()
-end)
 
+function bind(reference, callBack) 
+	return function()
+		callBack(reference)
+	end
+end
 
-hs.hotkey.bind(cah, "u",  function()
-	noises:stop()
-end)
+hs.hotkey.bind(cah, "y", bind(noises, noises.start))
+hs.hotkey.bind(cah, "u", bind(noises, noises.stop))
