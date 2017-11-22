@@ -15,3 +15,11 @@ function lines_from(file)
   end
   return lines
 end
+
+function execute_command(command)
+	_, _, _, resultCode = hs.execute(command, true)
+
+	if resultCode ~= 0 then
+		hs.alert.show("Could not set environment")
+	end
+end

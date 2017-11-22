@@ -22,7 +22,6 @@ csh = {"cmd", "ctrl", "shift"}
 --
 -- Imports
 --
-require("fileutils")
 require("windowmanagement")
 require("terminalswitch")
 require("screenmanagement")
