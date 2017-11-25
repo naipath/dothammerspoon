@@ -27,4 +27,6 @@ The following shortcuts are supported:
 - `ctrl + ⌥ + ⌘  + Y` - start listening to noises
 - `ctrl + ⌥ + ⌘  + U` - stop listening to noises
 
-When making a popping noise the front most application will hide.
+When making a popping noise the front most application will hide. 
+
+When making a hissing noise a vertical scroll will be triggered.
