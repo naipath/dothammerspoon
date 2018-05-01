@@ -27,6 +27,15 @@ The following shortcuts are supported:
 - `ctrl + ⌥ + ⌘  + Y` - start listening to noises
 - `ctrl + ⌥ + ⌘  + U` - stop listening to noises
 
-- `Popping noise` - Hide front most application
-- `Hissing noise` - Scroll down
-- `Hissing noise + ⌘` - Scroll up
+- `Popping noise` - hide front most application
+- `Hissing noise` - scroll down
+- `Hissing noise + ⌘` - scroll up
+
+## Speech
+- `ctrl + ⌥ + ⌘  + R` - start listening to speech
+- `ctrl + ⌥ + ⌘  + T` - stop listening to speech
+
+- `start` - play spotify track
+- `stop` - pause spotify track
+- `next` - go to next spotify song
+- `current` - display spotify track information
