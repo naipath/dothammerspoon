@@ -2,12 +2,6 @@
 -- Miscellaneous, use noises
 --
 
-function bind(reference, callBack) 
-	return function()
-		callBack(reference)
-	end
-end
-
 local modifier = -20
 
 local timer = hs.timer.new(0.01, function()
