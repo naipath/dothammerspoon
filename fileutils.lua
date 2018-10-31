@@ -1,3 +1,7 @@
+--
+-- Used to interact with the filesystem
+--
+
 -- see if the file exists
 function file_exists(file)
   local f = io.open(file, "rb")

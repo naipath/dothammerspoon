@@ -1,5 +1,5 @@
 --
--- Use ping to check internet
+-- Check internet connection with a ping to 8.8.8.8
 --
 
 local successNotification = "display notification \"> ping 8.8.8.8\" with title \"Successful\" sound name \"blow\""

@@ -1,3 +1,8 @@
+--
+-- Used to create custom menu dropdown to run custom configurations
+-- Example configuration: `example.menuConfig.json`
+--
+
 require("fileutils")
 
 local menuConfig = 'menuConfig.json'

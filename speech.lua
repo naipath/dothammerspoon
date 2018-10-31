@@ -13,6 +13,9 @@ local getKeys = function(table)
 end
 
 local speeches = {
+	["lunch"] = function(a,b)
+		hs.caffeinate.lockScreen()
+	end,
 	["start"] = function(a,b)
 		hs.spotify.play()
 	end,
