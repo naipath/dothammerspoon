@@ -12,13 +12,22 @@ The following shortcuts are supported:
 - `ctrl + ⌥ + ⌘  + E` - show window hintsi
 
 ## Screen management:
-- `ctrl + ⌥ + ⌘  + Left`  - move window to the left monitor
-- `ctrl + ⌥ + ⌘  + Right`  - move window to the right monitor
-- `ctrl + ⌥ + ⌘  + Up`  - move window to the upper monitor
-- `ctrl + ⌥ + ⌘  + Down`  - move window to the bottom monitor
+- `shift + ctrl + ⌘  + Left`  - move window to the left monitor
+- `shift + ctrl + ⌘  + Right`  - move window to the right monitor
+- `shift + ctrl + ⌘  + Up`  - move window to the upper monitor
+- `shift + ctrl + ⌘  + Down`  - move window to the bottom monitor
 
 ## Terminal management
 - `⌥ + space` - switch between terminal and focussed app
+
+## Spotlight
+- `⌘  + space` - Alternative for Spotlight, only looks up applications
+
+## Window hints
+- `ctrl + ⌥ + ⌘  + H` - Get window hints
+
+## Mouse
+- `shift + ctrl + ⌘  + D` - Show location of mouse
 
 ## Ping
 - `ctrl + ⌥ + ⌘  + P` - ping 8.8.8.8 twice
