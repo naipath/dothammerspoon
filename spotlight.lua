@@ -34,5 +34,6 @@ end
 local chooseApplication = hs.chooser.new(onCompletionHandler)
 	:placeholderText("Search apps")
 	:choices(applicationChoices)
+	:rows(4)
 
 hs.hotkey.bind({"cmd"}, "space", bind(chooseApplication, "show"))
