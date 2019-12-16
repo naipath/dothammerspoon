@@ -3,11 +3,11 @@
 -- Example configuration: `example.menuConfig.json`
 --
 
-require("fileutils")
+local fu = require("fileutils")
 
 local menuConfig = 'menuConfig.json'
 
-if file_exists(menuConfig) then
+if fu:file_exists(menuConfig) then
 
 	local menuBar = hs.menubar.new()
 	local menuItems = {}
@@ -20,10 +20,10 @@ if file_exists(menuConfig) then
 		menuBar:setTitle(selectedMenuItem.title)
 		menuBar:setMenu(menuItems)
 		
-		execute_command(selectedMenuItem.command)
+		fu:execute_command(selectedMenuItem.command)
 	end
 
-	menuItems = hs.json.decode(lines_from(menuConfig))
+	menuItems = hs.json.decode(fu:lines_from(menuConfig))
 	hs.fnutils.map(menuItems, function(item)
 		item.fn = menuClick
 	end)

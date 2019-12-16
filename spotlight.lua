@@ -2,10 +2,10 @@
 -- Alternative for Apple Spotlight
 --
 
-require("utils")
+local util = require("utils")
 
 function buildApplicationChoices(directory)
-	local applications = split(hs.execute("ls " .. directory), "\n")
+	local applications = util:split(hs.execute("ls " .. directory), "\n")
 
 	local result = {}
 	for _, application in pairs(applications) do		
@@ -24,8 +24,8 @@ local applicationChoices = {{
 		["image"] = hs.image.imageFromAppBundle("com.apple.finder")
 }}
 
-addToTable(applicationChoices, buildApplicationChoices("/Applications"))
-addToTable(applicationChoices, buildApplicationChoices("/Applications/Utilities"))
+util:addToTable(applicationChoices, buildApplicationChoices("/Applications"))
+util:addToTable(applicationChoices, buildApplicationChoices("/Applications/Utilities"))
 
 function onCompletionHandler(result)
 	if result then hs.application.launchOrFocus(result.uuid) end
@@ -36,4 +36,4 @@ local chooseApplication = hs.chooser.new(onCompletionHandler)
 	:choices(applicationChoices)
 	:rows(4)
 
-hs.hotkey.bind({"cmd"}, "space", bind(chooseApplication, "show"))
+hs.hotkey.bind({"cmd"}, "space", util:bind(chooseApplication, "show"))

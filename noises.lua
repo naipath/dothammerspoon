@@ -2,7 +2,7 @@
 -- Miscellaneous, use noises
 --
 
-require("utils")
+local util = require("utils")
 
 local modifier = -20
 
@@ -19,7 +19,7 @@ local noiseCallback = {
 		end
 		timer:start()
 	end,
-	[2] = bind(timer, "stop"),
+	[2] = util:bind(timer, "stop"),
 	[3] = function() hs.application.frontmostApplication():hide() end,
 }
 
@@ -27,5 +27,6 @@ local noises = hs.noises.new(function(noiseType)
 	noiseCallback[noiseType]()
 end)
 
-hs.hotkey.bind(cah, "y", bind(noises, "start"))
-hs.hotkey.bind(cah, "u", bind(noises, "stop"))
+hs.hotkey.bind(cah, "y", util:bind(noises, "start"))
+hs.hotkey.bind(cah, "u", util:bind(noises, "stop"))
+
