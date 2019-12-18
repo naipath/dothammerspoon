@@ -5,10 +5,9 @@
 
 local fu = require("fileutils")
 
-local menuConfig = 'menuConfig.json'
+local menuConfig = "menuConfig.json"
 
 if fu:file_exists(menuConfig) then
-
 	local menuBar = hs.menubar.new()
 	local menuItems = {}
 
@@ -19,7 +18,7 @@ if fu:file_exists(menuConfig) then
 
 		menuBar:setTitle(selectedMenuItem.title)
 		menuBar:setMenu(menuItems)
-		
+
 		fu:execute_command(selectedMenuItem.command)
 	end
 

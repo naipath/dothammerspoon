@@ -1,25 +1,28 @@
 -- Auto-reload hammerspoon
 function reloadConfig(files)
-    doReload = false
-    for _,file in pairs(files) do
-        if file:sub(-4) == ".lua" then
-            doReload = true
-        end
-    end
-    if doReload then
-        hs.reload()
-    end
+	doReload = false
+	for _, file in pairs(files) do
+		if file:sub(-4) == ".lua" then
+			doReload = true
+		end
+	end
+	if doReload then
+		hs.reload()
+	end
 end
 
-fileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+fileWatcher =
+	hs.pathwatcher.new(
+		os.getenv("HOME") .. "/.hammerspoon/",
+		reloadConfig
+	):start()
 
 --
 -- Key defs
 --
 
-cah = {"cmd", "alt", "ctrl"}
-csh = {"cmd", "ctrl", "shift"}
-
+cah = { "cmd", "alt", "ctrl" }
+csh = { "cmd", "ctrl", "shift" }
 
 --
 -- Imports
