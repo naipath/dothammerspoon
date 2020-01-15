@@ -39,3 +39,4 @@ require("spotlight")
 require("windowhints")
 
 hs.alert.show("Hammerspoon loaded")
+

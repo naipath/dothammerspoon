@@ -1,8 +1,16 @@
 --
+--
 -- Alternative for Apple Spotlight
 --
 
 local util = require("utils")
+local reloadApplication = { text = "Reload applications", uuid = "reload" }
+local finderApplication = {
+	text = "Finder",
+	uuid = "Finder",
+	image = hs.image.imageFromAppBundle("com.apple.finder")
+}
+local chooseApplication
 
 function buildApplicationChoices(directory)
 	local applications = util:split(hs.execute("ls " .. directory), "\n")
@@ -18,27 +26,34 @@ function buildApplicationChoices(directory)
 	return result
 end
 
-local applicationChoices = { {
-	text = "Finder",
-	uuid = "Finder",
-	image = hs.image.imageFromAppBundle("com.apple.finder")
-} }
 
-util:addToTable(applicationChoices, buildApplicationChoices("/Applications"))
-util:addToTable(
-	applicationChoices,
-	buildApplicationChoices("/Applications/Utilities")
-)
+function initializeApplicationChoices() 
+	local applicationChoices = { finderApplication }
+
+	util:addToTable(applicationChoices, buildApplicationChoices("/Applications"))
+	util:addToTable(applicationChoices, buildApplicationChoices("/System/Applications"))
+	util:addToTable(
+		applicationChoices,
+		buildApplicationChoices("/Applications/Utilities")
+	)
+	table.insert(applicationChoices, reloadApplication)
+
+	return applicationChoices
+end
+
 
 function onCompletionHandler(result)
+  	if result and result.uuid == reloadApplication.uuid then
+	  chooseApplication:choices(initializeApplicationChoises())
+	end
 	if result then
 		hs.application.launchOrFocus(result.uuid)
 	end
 end
 
-local chooseApplication =
-	hs.chooser.new(onCompletionHandler):placeholderText("Search apps"):choices(
-		applicationChoices
-	):rows(4)
+chooseApplication = hs.chooser.new(onCompletionHandler):placeholderText("Search apps")
+	:choices(initializeApplicationChoices())
+	:rows(4)
 
 hs.hotkey.bind({ "cmd" }, "space", util:bind(chooseApplication, "show"))
+
