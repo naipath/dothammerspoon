@@ -32,10 +32,7 @@ function initializeApplicationChoices()
 
 	util:addToTable(applicationChoices, buildApplicationChoices("/Applications"))
 	util:addToTable(applicationChoices, buildApplicationChoices("/System/Applications"))
-	util:addToTable(
-		applicationChoices,
-		buildApplicationChoices("/Applications/Utilities")
-	)
+	util:addToTable(applicationChoices, buildApplicationChoices("/System/Applications/Utilities"))
 	table.insert(applicationChoices, reloadApplication)
 
 	return applicationChoices
@@ -44,7 +41,7 @@ end
 
 function onCompletionHandler(result)
   	if result and result.uuid == reloadApplication.uuid then
-	  chooseApplication:choices(initializeApplicationChoises())
+	  chooseApplication:choices(initializeApplicationChoices())
 	end
 	if result then
 		hs.application.launchOrFocus(result.uuid)
