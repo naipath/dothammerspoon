@@ -30,6 +30,7 @@ csh = { "cmd", "ctrl", "shift" }
 require("windowmanagement")
 require("terminalswitch")
 require("screenmanagement")
+require("desktopBackground")
 require("ping")
 require("noises")
 require("menubar")
