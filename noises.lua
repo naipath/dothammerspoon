@@ -28,6 +28,15 @@ local noiseCallback = {
 local noises = hs.noises.new(function(noiseType)
 	noiseCallback[noiseType]()
 end)
+local noisesStarted = false
 
-hs.hotkey.bind(cah, "y", util:bind(noises, "start"))
-hs.hotkey.bind(cah, "u", util:bind(noises, "stop"))
+hs.hotkey.bind(cah, "y", function()
+    if noisesStarted then
+        noises:stop()
+        hs.alert.show("Stopped listening")
+    else
+        noises:start()
+        hs.alert.show("Started listening")
+    end
+    noisesStarted = not noisesStarted
+end)

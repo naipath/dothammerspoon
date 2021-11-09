@@ -31,19 +31,22 @@ local speeches = {
 }
 
 local speechListener
+local isListeningToSpeech = false
 
 hs.hotkey.bind(cah, "r", function()
-	speechListener = hs.speech.listener.new("spotify-speech-commands")
-	speechListener:commands(getKeys(speeches))
-	speechListener:foregroundOnly(false)
-	speechListener:setCallback(function(a, b)
-		speeches[b](a, b)
-	end)
-	speechListener:start()
-end)
-hs.hotkey.bind(cah, "t", function()
-	if speechListener then
-		speechListener:stop()
-		speechListener:delete()
-	end
+    if isListeningToSpeech then
+        speechListener:stop()
+        speechListener:delete()
+	    hs.alert.show("Stopped listing")
+    else
+	    speechListener = hs.speech.listener.new("spotify-speech-commands")
+	    speechListener:commands(getKeys(speeches))
+	    speechListener:foregroundOnly(false)
+	    speechListener:setCallback(function(a, b)
+		    speeches[b](a, b)
+	    end)
+	    speechListener:start()
+	    hs.alert.show("Started listing")
+    end
+    isListeningToSpeech = not isListeningToSpeech
 end)

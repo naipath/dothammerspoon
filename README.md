@@ -33,8 +33,7 @@ The following shortcuts are supported:
 - `ctrl + ⌥ + ⌘  + P` - ping 8.8.8.8 twice
 
 ## Noises
-- `ctrl + ⌥ + ⌘  + Y` - start listening to noises
-- `ctrl + ⌥ + ⌘  + U` - stop listening to noises
+- `ctrl + ⌥ + ⌘  + Y` - toggle listening to noises
 
 Noises that can be used:
 - `Popping noise` - hide front most application
@@ -42,11 +41,13 @@ Noises that can be used:
 - `Hissing noise + ⌘` - scroll up
 
 ## Speech
-- `ctrl + ⌥ + ⌘  + R` - start listening to speech
-- `ctrl + ⌥ + ⌘  + T` - stop listening to speech
+- `ctrl + ⌥ + ⌘  + R` - toggle listening to speech
 
 Speech that can be used:
 - `start` - play spotify track
 - `stop` - pause spotify track
 - `next` - go to next spotify song
 - `current` - display spotify track information
+
+# Appearance
+- `shift + ctrl + ⌘  + L` - toggle mac dark mode
