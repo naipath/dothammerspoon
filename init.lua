@@ -38,6 +38,8 @@ require("mouse")
 require("speech")
 require("spotlight")
 require("windowhints")
+require("usb")
+require("appearance")
 
 hs.alert.show("Hammerspoon loaded")
 
