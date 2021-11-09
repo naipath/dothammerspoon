@@ -9,7 +9,7 @@ The following shortcuts are supported:
 - `ctrl + ⌥ + ⌘  + Right` - move window to the right
 - `ctrl + ⌥ + ⌘  + Up` - maximize app
 - `ctrl + ⌥ + ⌘  + M` - toggle fullscreen mode
-- `ctrl + ⌥ + ⌘  + E` - show window hintsi
+- `ctrl + ⌥ + ⌘  + E` - show window hints
 
 ## Screen management:
 - `shift + ctrl + ⌘  + Left`  - move window to the left monitor
