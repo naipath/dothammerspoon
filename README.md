@@ -21,7 +21,7 @@ The following shortcuts are supported:
 - `⌥ + space` - switch between terminal and focussed app
 
 ## Spotlight
-- `⌘  + space` - Alternative for Spotlight, only looks up applications
+- `⌘  + space` - Alternative for Spotlight, only looks up applications and idea projects
 
 ## Window hints
 - `ctrl + ⌥ + ⌘  + H` - Get window hints
