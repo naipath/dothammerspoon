@@ -12,7 +12,7 @@ local finderApplication = {
     image = hs.image.imageFromAppBundle("com.apple.finder")
 }
 local intellijLibraryVersion = "IntelliJIdea2023.3"
-local intellijAppLocation = "//Users/tvs/Applications/JetBrains Toolbox/IntelliJ IDEA Ultimate.app"
+local intellijAppLocation = "//Users/tvs/Applications/IntelliJ IDEA Ultimate.app"
 
 local chooseApplication
 
