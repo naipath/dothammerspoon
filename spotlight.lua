@@ -11,8 +11,8 @@ local finderApplication = {
     uuid = "Finder",
     image = hs.image.imageFromAppBundle("com.apple.finder")
 }
-local intellijLibraryVersion = "JetBrains/IntelliJIdea2021.3"
-local intellijAppLocation = "/Applications/IntelliJ IDEA.app"
+local intellijLibraryVersion = "IntelliJIdea2023.3"
+local intellijAppLocation = "//Users/tvs/Applications/JetBrains Toolbox/IntelliJ IDEA Ultimate.app"
 
 local chooseApplication
 
@@ -44,7 +44,7 @@ end
 
 function findIntellijProjects()
     local projects = {}
-    local path = hs.fs.pathToAbsolute("~/Library/Application Support/" .. intellijLibraryVersion .. "/options/recentProjects.xml")
+    local path = hs.fs.pathToAbsolute("~/Library/Application Support/JetBrains/" .. intellijLibraryVersion .. "/options/recentProjects.xml")
     if not path then
         return {}
     end
@@ -79,5 +79,6 @@ chooseApplication = hs.chooser.new(onCompletionHandler)
                       :choices(initializeApplicationChoices())
                       :rows(4)
 
+hs.hotkey.bind(cah, "space", util:bind(chooseApplication, "show"))
 hs.hotkey.bind({ "cmd" }, "space", util:bind(chooseApplication, "show"))
 
