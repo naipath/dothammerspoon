@@ -38,9 +38,22 @@ function initializeApplicationChoices()
     util:addToTable(applicationChoices, buildApplicationChoices("/System/Applications/Utilities"))
     util:addToTable(applicationChoices, buildApplicationChoices("~/Applications"))
     util:addToTable(applicationChoices, findIntellijProjects())
+    util:addToTable(applicationChoices, findShortcuts())
     table.insert(applicationChoices, reloadApplication)
 
     return applicationChoices
+end
+
+function findShortcuts()
+    local shortcuts = {}
+    for _, shortcut in pairs(hs.shortcuts.list()) do
+         table.insert(shortcuts, {
+            text = "sc: " .. shortcut.name,
+            uuid = shortcut.name,
+            image = hs.image.imageFromAppBundle("com.apple.shortcuts")
+        })
+    end
+    return shortcuts
 end
 
 function findIntellijProjects()
@@ -71,6 +84,10 @@ function onCompletionHandler(result)
         chooseApplication:choices(initializeApplicationChoices())
     elseif result.uuid:find("idea ") == 1 then
         fu:execute_command(result.uuid .. " > /dev/null 2>&1 &")
+    elseif result.text:find("sc: ") == 1 then
+        hs.timer.doAfter(0, function ()
+            hs.shortcuts.run(result.uuid)
+        end)
     end
     hs.application.launchOrFocus(result.uuid)
 end
