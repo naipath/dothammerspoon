@@ -5,7 +5,7 @@
 -- Various BundleId's for terminal applications
 -- "com.apple.Terminal"
 -- "io.alacritty"
-local terminalApp = "com.googlecode.iterm2"
+local terminalApp = "com.mitchellh.ghostty"
 
 local previousOpenedApp = ""
 

@@ -11,8 +11,8 @@ local finderApplication = {
     uuid = "Finder",
     image = hs.image.imageFromAppBundle("com.apple.finder")
 }
-local intellijLibraryVersion = "IntelliJIdea2023.3"
-local intellijAppLocation = "//Users/tvs/Applications/IntelliJ IDEA Ultimate.app"
+local intellijLibraryVersion = "IntelliJIdea2025.1"
+local intellijAppLocation = "//Applications/IntelliJ IDEA.app"
 
 local chooseApplication
 
@@ -36,6 +36,7 @@ function initializeApplicationChoices()
     util:addToTable(applicationChoices, buildApplicationChoices("/Applications"))
     util:addToTable(applicationChoices, buildApplicationChoices("/System/Applications"))
     util:addToTable(applicationChoices, buildApplicationChoices("/System/Applications/Utilities"))
+    util:addToTable(applicationChoices, buildApplicationChoices("~/Applications"))
     util:addToTable(applicationChoices, findIntellijProjects())
     table.insert(applicationChoices, reloadApplication)
 
@@ -69,7 +70,7 @@ function onCompletionHandler(result)
     if result.uuid == reloadApplication.uuid then
         chooseApplication:choices(initializeApplicationChoices())
     elseif result.uuid:find("idea ") == 1 then
-        fu:execute_command("/usr/local/bin/" .. result.uuid)
+        fu:execute_command(result.uuid .. " > /dev/null 2>&1 &")
     end
     hs.application.launchOrFocus(result.uuid)
 end
